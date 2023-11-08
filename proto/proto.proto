@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package tokenRing;
+
+option go_package = "tokenRing/proto";
+
+
+service Peer {
+    rpc SendToken(Token) returns (Acknowledgement);
+}
+
+message Token {
+    int32 timestamp = 1;
+}
+
+message Acknowledgement {}
